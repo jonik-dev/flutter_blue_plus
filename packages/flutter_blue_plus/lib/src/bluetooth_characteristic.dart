@@ -6,7 +6,7 @@ part of flutter_blue_plus;
 
 final Guid cccdUuid = Guid("00002902-0000-1000-8000-00805f9b34fb");
 
-class BluetoothCharacteristic {
+class BluetoothCharacteristic implements BluetoothCharacteristicInterface {
   final DeviceIdentifier remoteId;
   final Guid serviceUuid;
   final Guid characteristicUuid;

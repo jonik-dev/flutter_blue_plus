@@ -9,7 +9,7 @@ import "../utils/snackbar.dart";
 import "descriptor_tile.dart";
 
 class CharacteristicTile extends StatefulWidget {
-  final BluetoothCharacteristic characteristic;
+  final BluetoothCharacteristicInterface characteristic;
   final List<DescriptorTile> descriptorTiles;
 
   const CharacteristicTile({Key? key, required this.characteristic, required this.descriptorTiles}) : super(key: key);
@@ -40,7 +40,7 @@ class _CharacteristicTileState extends State<CharacteristicTile> {
     super.dispose();
   }
 
-  BluetoothCharacteristic get c => widget.characteristic;
+  BluetoothCharacteristicInterface get c => widget.characteristic;
 
   List<int> _getRandomBytes() {
     final math = Random();

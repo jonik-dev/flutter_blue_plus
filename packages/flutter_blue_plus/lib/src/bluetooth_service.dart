@@ -8,7 +8,13 @@ class BluetoothService {
   final DeviceIdentifier remoteId;
   final Guid serviceUuid;
   final Guid? primaryServiceUuid;
-  final List<BluetoothCharacteristic> characteristics;
+  final List<BluetoothCharacteristicInterface> characteristics;
+
+  BluetoothService(
+      {required this.remoteId,
+      required this.serviceUuid,
+      required this.characteristics,
+      required this.primaryServiceUuid});
 
   /// convenience accessor
   Guid get uuid => serviceUuid;

@@ -6,7 +6,7 @@ final Map<DeviceIdentifier, StreamControllerReemit<bool>> _cglobal = {};
 final Map<DeviceIdentifier, StreamControllerReemit<bool>> _dglobal = {};
 
 /// connect & disconnect + update stream
-extension Extra on BluetoothDevice {
+extension Extra on BluetoothDeviceInterface {
   // convenience
   StreamControllerReemit<bool> get _cstream {
     _cglobal[remoteId] ??= StreamControllerReemit(initialValue: false);

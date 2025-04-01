@@ -10,7 +10,7 @@ import '../utils/snackbar.dart';
 import '../utils/extra.dart';
 
 class DeviceScreen extends StatefulWidget {
-  final BluetoothDevice device;
+  final BluetoothDeviceInterface device;
 
   const DeviceScreen({Key? key, required this.device}) : super(key: key);
 
@@ -152,7 +152,7 @@ class _DeviceScreenState extends State<DeviceScreen> {
     }
   }
 
-  List<Widget> _buildServiceTiles(BuildContext context, BluetoothDevice d) {
+  List<Widget> _buildServiceTiles(BuildContext context, BluetoothDeviceInterface d) {
     return _services
         .map(
           (s) => ServiceTile(
@@ -163,7 +163,7 @@ class _DeviceScreenState extends State<DeviceScreen> {
         .toList();
   }
 
-  CharacteristicTile _buildCharacteristicTile(BluetoothCharacteristic c) {
+  CharacteristicTile _buildCharacteristicTile(BluetoothCharacteristicInterface c) {
     return CharacteristicTile(
       characteristic: c,
       descriptorTiles: c.descriptors.map((d) => DescriptorTile(descriptor: d)).toList(),

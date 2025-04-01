@@ -4,7 +4,7 @@
 
 part of flutter_blue_plus;
 
-class BluetoothDevice {
+class BluetoothDevice implements BluetoothDeviceInterface {
   final DeviceIdentifier remoteId;
 
   BluetoothDevice({
@@ -304,7 +304,7 @@ class BluetoothDevice {
     // we always listen to the Services Changed characteristic if it exists.
     if (subscribeToServicesChanged) {
       if (!kIsWeb && !Platform.isIOS && !Platform.isMacOS) {
-        BluetoothCharacteristic? c = _servicesChangedCharacteristic;
+        BluetoothCharacteristicInterface? c = _servicesChangedCharacteristic;
         if (c != null &&
             (c.properties.notify || c.properties.indicate) &&
             c.isNotifying == false) {
@@ -698,7 +698,7 @@ class BluetoothDevice {
   }
 
   /// Get the Services Changed characteristic (0x2A05)
-  BluetoothCharacteristic? get _servicesChangedCharacteristic {
+  BluetoothCharacteristicInterface? get _servicesChangedCharacteristic {
     final Guid gattUuid = Guid("1801");
     final Guid servicesChangedUuid = Guid("2A05");
     BluetoothService? gatt =

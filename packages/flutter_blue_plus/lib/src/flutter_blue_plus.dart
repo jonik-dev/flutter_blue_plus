@@ -683,7 +683,7 @@ class ServiceDataFilter {
 }
 
 class ScanResult {
-  final BluetoothDevice device;
+  final BluetoothDeviceInterface device;
   final AdvertisementData advertisementData;
   final int rssi;
   final DateTime timeStamp;
